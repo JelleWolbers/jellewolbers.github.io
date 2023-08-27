@@ -14,11 +14,6 @@
 				--color-accent: #22d3ee; /* Tailwind Cyan 400 */
 				--color-accent-hover: #67e8f9; /* Tailwind Cyan 300 */
 				--color-accent-active: #a5f3fc; /* Tailwind Cyan 200 */
-				--breakpoint-sm: 640px;
-				--breakpoint-md: 768px;
-				--breakpoint-lg: 1024px;
-				--breakpoint-xl: 1280px;
-				--breakpoint-2xl: 1536px;
 			}
 			* {
 				margin: 0;
@@ -31,7 +26,9 @@
 			h2 {
 				font-size: 1.2rem;
 			}
-			input, textarea, button {
+			input, button {
+				padding: .5rem;
+				border-radius: 5px;
 				font-size: 1rem;
 			}
 			a:link {
@@ -57,14 +54,41 @@
 			.hidden {
 				display: none;
 			}
+			@media (max-width: 768px) {
+				#page-wrapper {
+					border: none;
+					flex-direction: column;
+				}
+				#text-container {
+					justify-content: start;
+					text-align: center;
+				}
+				#logo-container img {
+					width: 30vw;
+					height: 30vw;
+				}
+			}
+			@media (min-width: 769px) {
+				#page-wrapper {
+					border: .5rem solid;
+					flex-direction: row;
+				}
+				#text-container {
+					justify-content: center;
+				}
+				#logo-container img {
+					width: 20vw;
+					height: 20vw;
+				}
+			}
 		</style>
 	</head>
 	<body style="height: 100vh; padding: 1rem; background-color: var(--color-background); color: var(--color-text); font-family: 'Roboto Slab', serif;">
-		<div style="height: 100%; border: .5rem solid; display: flex;">
-			<div style="flex: 2 0 0; display: flex; justify-content: center; align-items: center;">
-				<img src="me.jpeg" alt="Jelle's picture" style="display: inline-block; width: 20vw; height: 20vw; border-radius: 50%; margin: 1rem; object-fit: cover; border: 5px solid var(--color-text);">
+		<div id="page-wrapper" style="height: 100%; display: flex;">
+			<div id="logo-container" style="flex: 2 0 0; display: flex; justify-content: center; align-items: center;">
+				<img src="me.jpeg" alt="Jelle's picture" style="display: inline-block; border-radius: 50%; margin: 1rem; object-fit: cover; border: 5px solid var(--color-text);">
 			</div>
-			<div style="flex: 3 0 0; display: flex; flex-direction: column; justify-content: center;">
+			<div id="text-container" style="flex: 3 0 0; display: flex; flex-direction: column;">
 				<div style="margin: 1rem;">
 					<h1>Jelle Wolbers</h1>
 					<h2>I build novel demonstrators for XR and for Human-AI teams</h2>
@@ -72,10 +96,10 @@
 				<div style="margin: 1rem;">
 					<p>Reach me <a href="https://www.linkedin.com/in/jellewolbers/" target="_blank">via LinkedIn</a> or <a href="#" id="contact-form-toggle-element">by contact form</a>.</p>
 					<div id="contact-form" class="hidden" style="margin-top: 1rem;">
-						<form action="https://formspree.io/f/mqkvqnrr" method="POST" style="display: flex; gap: .5rem;">
-							<input name="email" type="email" placeholder="Your e-mail address" style="padding: .5rem; border-radius: 5px;">
-							<textarea name="message" placeholder="Your message" rows="1" cols="30" style="flex: 1 0 0; padding: .5rem; border-radius: 5px;"></textarea>
-							<button type="submit" style="padding: .5rem; border-radius: 5px;">Send</button>
+						<form action="https://formspree.io/f/mqkvqnrr" method="POST" style="display: flex; flex-direction: column; gap: .5rem;">
+							<input name="message" type="text" placeholder="Your message">
+							<input name="email" type="email" placeholder="Your e-mail address">
+							<button type="submit">Send</button>
 						</form>
 					</div>
 				</div>
