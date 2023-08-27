@@ -8,40 +8,76 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 		<style>
+			:root {
+				--color-background: #171717; /* Tailwind Neutral 900 */
+				--color-text: #f3f4f6; /* Tailwind Gray 100 */
+				--color-accent: #22d3ee; /* Tailwind Cyan 400 */
+				--color-accent-hover: #67e8f9; /* Tailwind Cyan 300 */
+				--color-accent-active: #a5f3fc; /* Tailwind Cyan 200 */
+				--breakpoint-sm: 640px;
+				--breakpoint-md: 768px;
+				--breakpoint-lg: 1024px;
+				--breakpoint-xl: 1280px;
+				--breakpoint-2xl: 1536px;
+			}
 			* {
 				margin: 0;
 				padding: 0;
 				box-sizing: border-box;
 			}
+			a:link {
+				color: var(--color-accent);
+			}
+			a:visited {
+				color: var(--color-accent);
+			}
+			a:hover {
+				color: var(--color-accent-hover);
+			}
+			a:active {
+				color: var(--color-accent-active);
+			}
+			button {
+				background-color: var(--color-accent);
+				border: none;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: var(--color-accent-hover);
+			}
+			.hidden {
+				display: none;
+			}
 		</style>
 	</head>
-	<body style="height: 100vh; padding: 1rem; background-color: #000; color: #f3f4f6; font-family: 'Roboto Slab', serif;">
+	<body style="height: 100vh; padding: 1rem; background-color: var(--color-background); color: var(--color-text); font-family: 'Roboto Slab', serif;">
 		<div style="height: 100%; border: .5rem solid; display: flex;">
-			<div style="flex: 1 0 0; display: flex; justify-content: center; align-items: center;">
-				<img src="me.jpeg" alt="Jelle's picture" style="display: inline-block; width: 20vw; height: 20vw; border-radius: 50%; object-fit: cover;">
+			<div style="flex: 2 0 0; display: flex; justify-content: center; align-items: center;">
+				<img src="me.jpeg" alt="Jelle's picture" style="display: inline-block; width: 20vw; height: 20vw; border-radius: 50%; margin: 1rem; object-fit: cover; border: 5px solid var(--color-text);">
 			</div>
-			<div style="flex: 2 0 0; display: flex; flex-direction: column; justify-content: center;">
-				<div>
+			<div style="flex: 3 0 0; display: flex; flex-direction: column; justify-content: center;">
+				<div style="margin: 1rem;">
 					<h1>Jelle Wolbers</h1>
 					<p>I build novel demonstrators for XR and for Human-AI teams</p>
 				</div>
-				<div>
-					<div>Reach me&nbsp;<a href="https://www.linkedin.com/in/jellewolbers/" target="_blank">via LinkedIn</a>&nbsp;or by contact form.</div>
-					<div>
-						<form action="https://formspree.io/f/mqkvqnrr" method="POST">
-							<label>
-								Your email:
-								<input type="email" name="email">
-							</label>
-							<label>
-								Your message:
-								<textarea name="message"></textarea>
-							</label>
-							<button type="submit">Send</button>
+				<div style="margin: 1rem;">
+					<p>Reach me <a href="https://www.linkedin.com/in/jellewolbers/" target="_blank">via LinkedIn</a> or <a href="#" id="contact-form-toggle-element">by contact form</a>.</p>
+					<div id="contact-form" class="hidden" style="margin-top: 1rem;">
+						<form action="https://formspree.io/f/mqkvqnrr" method="POST" style="display: flex; gap: .5rem;">
+							<input name="email" type="email" placeholder="Your e-mail address" style="padding: .5rem; border-radius: 5px; font-size: 1rem;">
+							<textarea name="message" placeholder="Your message" rows="1" cols="30" style="flex: 1 0 0; padding: .5rem; border-radius: 5px; font-size: 1rem;"></textarea>
+							<button type="submit" style="padding: .5rem; border-radius: 5px; font-size: 1rem;">Send</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		<script>
+			const contactFormToggleElement = document.getElementById("contact-form-toggle-element");
+			const contactForm = document.getElementById("contact-form");
+			contactFormToggleElement.addEventListener("click", function () {
+				contactForm.classList.toggle("hidden");
+			})
+		</script>
 	</body>
 </html>
