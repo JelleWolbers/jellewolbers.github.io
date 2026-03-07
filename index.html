@@ -5,10 +5,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<style type="text/css">
-			:root {
-				--color-background: oklch(97% 0.001 106.424); /* Stone 100 */
-				--color-text: oklch(21.6% 0.006 56.043); /* Stone 900 */
-			}
 			* {
 				box-sizing: border-box;
 				margin: 0;
@@ -18,8 +14,8 @@
 				max-width: 650px;
 				margin: 20px auto;
 				padding: 0 10px;
-				background-color: var(--color-background);
-				color: var(--color-text);
+				background-color: oklch(97% 0.001 106.424); /* Stone 100 */
+				color: oklch(21.6% 0.006 56.043); /* Stone 900 */
 				font-family: Georgia, serif;
 				font-size: 18px;
 				line-height: 1.6;
@@ -40,13 +36,16 @@
 	</head>
 	<body>
 		<header style="display: flex; flex-direction: column; align-items: center">
-			<img src="jelle.png" alt="A picture of Jelle Wolbers" style="max-width: 80%; object-fit: contain" />
+			<img src="jelle.png" alt="A picture of Jelle Wolbers" style="aspect-ratio: 4/5; width: 60%" />
 			<h1 style="text-align: center">Jelle Wolbers</h1>
 		</header>
 		<main>
 			<section>
 				<h2>I build digital demonstrators at <a href="https://www.tno.nl/" target="_blank">TNO</a></h2>
-				<p>I'm a Systems Engineer and usually work with Web and VR technologies. Most of my projects involve the Royal Netherlands Navy or the Royal Netherlands Air and Space Force.</p>
+				<p>I'm a developer and systems engineer and usually work with Web and VR technologies. Most of my projects involve the Royal Netherlands Navy or the Royal Netherlands Air and Space Force.</p>
+			</section>
+			<section>
+				<p>Contact me on <a href="https://www.linkedin.com/in/jellewolbers/" target="_blank">LinkedIn</a> or via <a href="&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#99;&#111;&#110;&#116;&#97;&#99;&#116;&commat;&#106;&#101;&#108;&#108;&#101;&#119;&#111;&#108;&#98;&#101;&#114;&#115;&period;&#110;&#108;">email</a>.</p>
 			</section>
 		</main>
 	</body>
