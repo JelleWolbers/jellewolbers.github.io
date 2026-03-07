@@ -1,1 +1,1 @@
-This is my personal website which basically functions as a business card.
+My personal website which basically functions as a digital business card.
